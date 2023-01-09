@@ -1,0 +1,18 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "markdown.occurrencesHighlight.enabled": true,
+  "namespaceResolver.highlightOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.wordWrap": "wordWrapColumn",
+  "prettier.bracketSameLine": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleAttributePerLine": true,
+  "prettier.trailingComma": "none",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+  "javascript.inlayHints.enumMemberValues.enabled": false
+}

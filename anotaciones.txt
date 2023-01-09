@@ -1,13 +1,13 @@
 YOUTUBE
 +-+-+-+
 
-- ¿Qué es React.js y cómo funciona? (EDTeam): https://www.youtube.com/watch?v=lWQ69WX7-hA&feature=youtu.be
+- ¿Qué es React.js y cómo funciona? (EDTeam) || 11 de junio de 2019 ||: https://www.youtube.com/watch?v=lWQ69WX7-hA&feature=youtu.be
 
-- Curso React JS en Español: Instalación, Componentes, JSX y más (Víctor Robles WEB): https://www.youtube.com/watch?v=vAvCcjSAGDY&feature=youtu.be
+- Curso React JS en Español: Instalación, Componentes, JSX y más (Víctor Robles WEB) || 03 de octubre de 2019 ||: https://www.youtube.com/watch?v=vAvCcjSAGDY&feature=youtu.be
 
-- Curso de Reactjs desde Cero para principiantes 2022 (Fazt): https://www.youtube.com/watch?v=rLoWMU4L_qE&list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI&index=1
+- Curso de Reactjs desde Cero para principiantes 2022 (Fazt) || 11 de agosto de 2022 ||: https://www.youtube.com/watch?v=rLoWMU4L_qE&list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI&index=1
 
-- Aprende React Desde Cero - Curso de React Con Proyectos (freeCodeCamp Español): https://www.youtube.com/watch?v=6Jfk8ic3KVk&list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI&index=2
+- Aprende React Desde Cero - Curso de React Con Proyectos (freeCodeCamp Español) || 15 de marzo de 2022 ||: https://www.youtube.com/watch?v=6Jfk8ic3KVk&list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI&index=2
 
 
 ANOTACIONES
@@ -18,21 +18,24 @@ ANOTACIONES
 -----
 + React.js es una libreria
 -----
-+ ¿Qué es JSX?: https://es.reactjs.org/docs/introducing-jsx.html
++ ¿Qué es JSX (JavaScript Syntax Extension)?: https://es.reactjs.org/docs/introducing-jsx.html
 -----
 + ¿Qué es webpack?: 
 	- https://www.campusmvp.es/recursos/post/webpack-que-es-para-que-sirve-y-sus-ventajas-e-inconvenientes.aspx
 	- https://webpack.js.org/
 -----
-+
++ npm (Node Package Manager):
+- ¿Qué es NPM? https://www.hostinger.es/tutoriales/que-es-npm
+- Documentación de Node.js: https://nodejs.org/es/docs/
+- Descarga de Node.js (que incluye npm): https://nodejs.org/es/download/
+-----
++ Create React App: https://create-react-app.dev/
 -----
 +
 -----
 +
 -----
-+
------
-+
++ React con PHP y MySQL | Ejemplo de aplicación web (Luis Cabrera Benito): https://www.youtube.com/watch?v=A1S1v-DRgP0
 -----
 +
 -----
