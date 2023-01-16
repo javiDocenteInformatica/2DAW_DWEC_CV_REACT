@@ -1,8 +1,5 @@
-import logo from "./assets/images/logo.svg";
-import "./assets/css/App.css";
-
-// Importar componentes
-import NavBar from "./components/NavBar.js";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
@@ -21,9 +18,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <section className="componentes">
-        <NavBar />
-      </section>
     </div>
   );
 }
