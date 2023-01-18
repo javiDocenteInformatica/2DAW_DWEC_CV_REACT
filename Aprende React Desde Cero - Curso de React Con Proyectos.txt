@@ -216,9 +216,10 @@ ENLACE: https://www.youtube.com/watch?v=6Jfk8ic3KVk&list=PLbaI3dQZLK5BtbhnPRflnj
 + Proyecto: Clon de freeCodeCamp
 - Crear un componente
 
-00:00:00
+01:42:28
 --------
-
++ Proyecto: Clon de freeCodeCamp
+- Preparar el Proyecto
 
 00:00:00
 --------
