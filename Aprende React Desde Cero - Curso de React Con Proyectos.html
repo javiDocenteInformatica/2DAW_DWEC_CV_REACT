@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/x-icon" href="https://pixabay.com/photos/mma-network-cage-tattoos-beard-2282013/"><i class="fa-brands fa-react"></i>
+
+	<title>React freeCodeCamp Español</title>
+
+	<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js "></script>
+	<link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css " rel="stylesheet">
+	</link>
+
+	<script>
+		//Selectores de atributo: https://developer.mozilla.org/es/docs/Web/CSS/Attribute_selectors
+
+		//Document.querySelectorAll(): https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+
+		//NodeList: 
+		// => 1. https://developer.mozilla.org/en-US/docs/Web/API/NodeList
+		// => 2. https://www.w3schools.com/jsreF/dom_obj_html_nodelist.asp
+		//Node: https://developer.mozilla.org/en-US/docs/Web/API/Node
+
+		//HTMLCollection: 
+		// => 1. https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection
+		// => 2. https://www.w3schools.com/jsreF/dom_obj_htmlcollection.asp
+
+		//Element: https://developer.mozilla.org/en-US/docs/Web/API/Element
+
+		//String: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+		//Number: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number
+		//Number.parseInt(): https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+
+		//InnerText vs InnerHTML vs TextContent: https://builtin.com/software-engineering-perspectives/innerhtml-vs-innertext
+
+
+
+		const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
+		window.onload = function () {
+
+			let listaJumbotron = document.querySelectorAll('[cartita]');
+
+			// recorro todos los jumbotron (son como tarjetas)
+			listaJumbotron.forEach(
+
+				function (nodo, indice, array) {
+
+					// evento click por cada jumbotron
+					nodo.addEventListener('click', function (evento) {
+
+						let elementoClickado = evento.target;
+
+						if (elementoClickado.nodeName.toLowerCase() == 'button') {
+
+							let cadenaElementoTiempo = nodo.querySelector('time').innerText;
+
+							let tiempoEn_ms = f_convierteHoraMinutosSegundosEn_seg(cadenaElementoTiempo);
+
+							f_abreYoutubeTiempo(tiempoEn_ms);
+						}
+					})
+				}
+			);
+
+		}
+
+		/** 
+		* Función que abre una pestaña nueva en Youtube, en la url concretada, con el tiempo en segundos estipulado por parámetro
+		* @param {string} tiempoEn_ms - tiempo en segundos donde empezará el video
+		* @return {none} No devuelve nada
+		*/
+		const f_abreYoutubeTiempo = function (tiempoEn_ms) {
+			let urlConTiempo = `${urlYoutube}&t=${tiempoEn_ms}`;
+			window.open(urlConTiempo, '_blank');
+		}
+
+
+
+		/**
+		 * Función que convierte las HORAS, MINUTOS y SEGUNDOS en SEGUNDOS
+		 * @param {string} cadenaTiempo
+		 * @returns {string} Segundos totales
+		 */
+		const f_convierteHoraMinutosSegundosEn_seg = function (cadenaTiempo) {
+
+			let arrayCadenaTiempo = cadenaTiempo.split(":");
+
+			let horas = Number.parseInt(arrayCadenaTiempo[0], 10);
+			let minutos = Number.parseInt(arrayCadenaTiempo[1]);
+			let segundos = Number.parseInt(arrayCadenaTiempo[2]);
+
+			let segundosTotales = (horas * 3600) + (minutos * 60) + (segundos);
+
+			return segundosTotales;
+		}
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container-fluid m-auto row gap-4">
+		<div class="sticky-top bg-dark bg-gradient text-light p-2 border border-2 border-danger">
+			<h1>Aprende React Desde Cero - Curso de React Con Proyectos
+				<span class="badge bg-danger text-warning">
+					<span>🎥</span><a class="text-decoration-none link-light" href="https://www.youtube.com/watch?v=6Jfk8ic3KVk&list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI&index=13" target="_blank">Enlace a Youtube
+					</a>
+				</span>
+			</h1>
+		</div>
+
+		<!-- 00:00:00 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Introducción</h2>
+			<ul>
+				<!-- <li class="col-md-8 fs-4">Elemento</li> -->
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:00:00</time></span>
+			</div>
+		</div>
+
+		<!-- 00:02:21 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Estructura del curso</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Conceptos básicos de React</li>
+				<li class="col-md-8 fs-4">Descargar e instalar Node.js</li>
+				<li class="col-md-8 fs-4">JavaScript XML (JSX)</li>
+				<li class="col-md-8 fs-4">Estructura básica de una aplicación de React</li>
+			</ul>
+			<h3>Proyectos</h3>
+			<ul>
+				<li class="col-md-8 fs-5">Proyecto 1: Clon de testimonios de freeCodeCamp.</li>
+				<li class="col-md-8 fs-5">Proyecto 2: Contador de clics.</li>
+				<li class="col-md-8 fs-5">Proyecto 3: Calculadora.</li>
+				<li class="col-md-8 fs-5">Proyecto 4: Aplicación de tareas</li>
+			</ul>
+			<h3>Estructura del curso</h3>
+			<ul>
+				<li class="col-md-8 fs-5">Componentes de clase</li>
+				<li class="col-md-8 fs-5">Adaptar los primeros dos proyectos con componentes de clase:</li>
+				<ul>
+					<li class="col-md-8 fs-5">Clon de testimonios de freeCodeCamp.</li>
+					<li class="col-md-8 fs-5">Contador de clics.</li>
+				</ul>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:02:21</time></span>
+			</div>
+		</div>
+
+
+		<!-- 00:04:05 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Conocimientos previos</h2>
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:05</time></span>
+			</div>
+		</div>
+
+
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		<!-- 00:06:21-->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Ventajas de React</h2>
+			<ul>
+				<li>Fácil de aprender y usar</li>
+				<li>Componentes reutilizables</li>
+				<li>Crear aplicaciones dinámicas</li>
+				<li>Buen desempeño</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:06:21</time></span>
+			</div>
+		</div>
+
+
+
+
+		<!-- 00:07:49 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Conceptos Básicos</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:07:49</time></span>
+			</div>
+		</div>
+
+
+
+
+
+		<!-- 00:08:03 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Conceptos Básicos</h2>
+			<ul>
+				<li>Componente</li>
+				<li>Funcionales</li>
+				<li>De Clase</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:08:03</time></span>
+			</div>
+		</div>
+
+
+
+		<!-- 00:10:14 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>Conceptos Básicos</h2>
+			<ul>
+				<li>Componente Funcional</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:10:14</time></span>
+			</div>
+		</div>
+
+
+
+		00:12:49
+		--------
+		- Props
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:15:27
+		--------
+		- Componente de Clase
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:18:33
+		--------
+		- Estado
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:19:53
+		--------
+		+ ¿Por qué Componentes de Clase?
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:20:35
+		--------
+		- Hooks
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		00:22:18
+		--------
+		- Event Listener
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+		00:23:10
+		--------
+		+ Conceptos Importantes
+		- Componente
+		- props
+		- Estado
+		- Hooks
+		- Event Listener
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		00:23:53
+		--------
+		+ Node.js
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:29:35
+		--------
+		+ Introducción a JSX
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:29:51
+		--------
+		+ ¿Qué es JSX?
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:30:25
+		--------
+		+ Ventajas JSX
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		00:30:59
+		--------
+		+ JSX es opcional
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+		00:31:15
+		--------
+		+ ejemplo de un elemento en JSX
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+		00:34:18
+		--------
+		+ Elementos en JSX
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		00:34:52
+		--------
+		+ Elementos vs Componentes
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:36:19
+		--------
+		+ React DOM
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:38:10
+		--------
+		+ Elementos (JSX)
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:39:05
+		--------
+		+ ¿Cómo reconocer Elementos y diferenciarlos de los Componentes?
+		- Etiquetas
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:40:09
+		--------
+		- Atributos
+		- class (HTML) == className (JSX)
+		- for (HTML) == htmlFor (JSX)
+		- style (HTML) == 'acepta objeto JS con propiedades CSS escritas en camelCase'
+		ej: font-family == fontFamily
+		- etc...
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		00:47:24
+		--------
+		- Atributos del DOM reconocidos por React (https://reactjs.org/docs/dom-elements.html)
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:47:47
+		--------
+		- Estructura (Componente JSX)
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:49:20
+		--------
+		- Renderizar Componentes
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:52:47
+		--------
+		- Self-Closing Tags (Etiquetas Autocerradas): ej: <img src="logo.png" alt="descripcion imagen" />
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+		00:53:58
+		--------
+		- JavaScript en JSX (podemos incluir JS en JSX)
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		00:57:02
+		--------
+		+ Crear una Aplicación de React
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JS</li>
+	</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+		00:57:26
+		--------
+		+ Visual Studio Code
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		00:57:55
+		--------
+		- Crear proyecto base de React
+		=> `npx create-react-app myApp`
+
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		01:02:29
+		--------
+		- Iniciar el proyecto para que lo veamos en el navegador
+		=> `npm start` (estando en la carpeta del proyecto)
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+		01:06:26
+		--------
+		- Terminal info
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		01:07:14
+		--------
+		+ Estructura de la Aplicación
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+		01:25:44
+		--------
+		+ 'npx create-react-app .' => crea la aplicación directamente en la carpeta donde nos encontramos
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+
+		01:26:22
+		--------
+		+ Proyecto: Clon de freeCodeCamp
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+		01:26:56
+		--------
+		+ Proyecto: Clon de freeCodeCamp
+		- Crear el Proyecto
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+
+		01:29:28
+		--------
+		+ Proyecto: Clon de freeCodeCamp
+		- Identificar los componentes
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+		01:32:04
+		--------
+		+ Proyecto: Clon de freeCodeCamp
+		- Crear un componente
+		<!-- 00:04:46 -->
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<h2>¿Qué es React?</h2>
+			<!-- <ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JS</li>
+			</ul> -->
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:04:46</time></span>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+</body>
+
+</html>
