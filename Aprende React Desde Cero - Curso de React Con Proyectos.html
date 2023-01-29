@@ -989,18 +989,9 @@
 			]; // fin: arrayObjetoDatos{}
 
 			let cadenaResultado = '';
-			const etiquetas = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'code'];
+			// const etiquetas = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'code'];
 
 			const f_recorreObjeto = function (arrayObjetoDatos, etiqueta = '0') {
-
-				// console.log(`${arrayObjetoDatos.constructor.name.toLowerCase()}`);
-
-				// if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
-
-				// 	f_recorreObjeto(valor, clave);
-
-				// } else {// si clave NO es NÚMERICA (array asociativo: <li>)
-				// }
 
 				for (let [clave, valor] of Object.entries(arrayObjetoDatos)) {
 
@@ -1019,10 +1010,11 @@
 
 							if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
 
-								f_recorreObjeto(valor, clave);
+								f_recorreObjeto(valor);
 
 							} else {// si clave NO es NÚMERICA (array asociativo: <li>)
 
+								// Necesito este bucle para poder realizar bien la apertura y cierre de las etiquetas <li></li>, si no, me crea una etiqueta de apertura y cierre de más: <li> <li></li> </li>
 								for (let [clave2, valor2] of Object.entries(valor)) {
 
 									cadenaResultado += `<${clave}>`;
@@ -1034,14 +1026,6 @@
 									console.log(`%c </${clave}>`, `color: Aqua`);
 
 								}
-
-								// cadenaResultado += `<${clave}>`;
-								// console.log(`%c <${clave}>`, `color: Aqua`);
-
-								// f_recorreObjeto(valor, clave);
-
-								// cadenaResultado += `</${clave}>`;
-								// console.log(`%c </${clave}>`, `color: Aqua`);
 
 							}
 
@@ -1063,43 +1047,14 @@
 
 							console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
 
-
-
-
-							// if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
-
-							// 	cadenaResultado += `${valor}`;
-							// 	console.log(`%c ${valor}`, `color: DeepPink`);
-
-							// } else {// si clave NO es NÚMERICA (array asociativo: <li>)
-
-							// 	cadenaResultado += `<${clave}>`;
-							// 	cadenaResultado += `${valor}`;
-							// 	cadenaResultado += `</${clave}>`;
-
-							// 	console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
-							// }
-
-							// console.log();
-
 							break;// fin case: 'string'
-
 
 
 						default:
 
-							// if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
-
-							// console.log(`%c ${valor}`, `color: DeepPink`);
-							// } else {// si clave NO es NÚMERICA (array asociativo: <li>)
-
-							// console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
-							// }
-
 							break;// fin case: default
 
 					}// fin: switch
-
 
 				}// fin: for Object.entries()
 
@@ -1109,8 +1064,8 @@
 
 			f_recorreObjeto(arrayObjetoDatos);
 
-			console.log('\n\n');
-			console.log(`%c ${cadenaResultado} `, `color: yellow`);
+			// console.log('\n\n');
+			// console.log(`%c ${cadenaResultado} `, `color: yellow`);
 			document.write(`${cadenaResultado}`);
 
 			return cadenaResultado;
