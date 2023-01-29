@@ -69,16 +69,17 @@
 
 			let arrayCadenaTiempo = cadenaTiempo.split(":");
 
-			let horas = Number.parseInt(arrayCadenaTiempo[0], 10);
+			let horas = Number.parseInt(arrayCadenaTiempo[0]);
 			let minutos = Number.parseInt(arrayCadenaTiempo[1]);
 			let segundos = Number.parseInt(arrayCadenaTiempo[2]);
 
 			let segundosTotales = (horas * 3600) + (minutos * 60) + (segundos);
 
 			return segundosTotales;
-		}
+		};
 
 		const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
+
 		window.onload = function () {
 
 			let listaJumbotron = document.querySelectorAll('[cartita]');
@@ -101,9 +102,11 @@
 
 							f_abreYoutubeTiempo(tiempoEn_ms);
 						}
-					})
-				}
-			);
+					});// fin: nodo.addEventListener('click', function (evento)
+
+				}// fin: function (nodo, indice, array)
+
+			);// fin: listaJumbotron.forEach
 
 		}
 
@@ -118,7 +121,7 @@
 	<!-- scroll top button -->
 	<!-- código JS abajo -->
 	<form class="form-floating">
-		<button type="button" class="btn btn-danger  btn-lg" id="btn-back-to-top">
+		<button type="button" class="btn btn-danger btn-lg" id="btn-back-to-top">
 			<span class="material-symbols-outlined">
 				expand_less
 			</span>
@@ -139,8 +142,9 @@
 		</div>
 
 		<!-- LISTA DE CARTAS -->
-		<!-- 1 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>1</p>
 			<h2>Introducción</h2>
 			<ul>
 				<!-- <li class="col-md-8 fs-4">Elemento</li> -->
@@ -151,8 +155,9 @@
 			</div>
 		</div>
 
-		<!-- 2 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>2</p>
 			<h2>Estructura del curso</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Conceptos básicos de React</li>
@@ -183,8 +188,9 @@
 		</div>
 
 
-		<!-- 3 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>3</p>
 			<h2>Conocimientos previos</h2>
 			<ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -198,8 +204,9 @@
 		</div>
 
 
-		<!-- 4 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>4</p>
 			<h2>¿Qué es React?</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -214,8 +221,9 @@
 
 
 
-		<!-- 5-->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>5</p>
 			<h2>Ventajas de React</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Fácil de aprender y usar</li>
@@ -232,8 +240,9 @@
 
 
 
-		<!-- 6 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>6</p>
 			<h2>Conceptos Básicos</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -250,8 +259,9 @@
 
 
 
-		<!-- 7 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			p{7}
 			<h2>Conceptos Básicos</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Componente</li>
@@ -266,8 +276,9 @@
 
 
 
-		<!-- 8 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>8</p>
 			<h2>Conceptos Básicos</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Componente Funcional</li>
@@ -280,8 +291,9 @@
 
 
 
-		<!-- 9 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>9</p>
 			<h2>¿Qué es React?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Props</li>
@@ -295,8 +307,9 @@
 
 
 
-		<!-- 10 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>10</p>
 			<h2>¿Qué es React?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Componente de Clase</li>
@@ -312,8 +325,9 @@
 
 
 
-		<!-- 11 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>11</p>
 			<h2>¿Qué es React?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Estado</li>
@@ -328,8 +342,9 @@
 
 
 
-		<!-- 12 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>12</p>
 			<h2>¿Por qué Componentes de Clase?</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -346,8 +361,9 @@
 
 
 
-		<!-- 13 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>13</p>
 			<h2>¿Por qué Componentes de Clase?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Hooks</li>
@@ -362,8 +378,9 @@
 
 
 
-		<!-- 14 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>14</p>
 			<h2>¿Por qué Componentes de Clase?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Event Listener</li>
@@ -379,8 +396,9 @@
 
 
 
-		<!-- 15 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>15</p>
 			<h2>Conceptos Importantes</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Componente</li>
@@ -400,8 +418,9 @@
 
 
 
-		<!-- 16 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>16</p>
 			<h2>Node.js</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -419,8 +438,9 @@
 
 
 
-		<!-- 17 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>17</p>
 			<h2>Introducción a JSX</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -437,8 +457,9 @@
 
 
 
-		<!-- 18 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>18</p>
 			<h2>¿Qué es JSX?</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -456,8 +477,9 @@
 
 
 
-		<!-- 19 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>19</p>
 			<h2>Ventajas JSX</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -474,8 +496,9 @@
 
 
 
-		<!-- 20 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>20</p>
 			<h2>JSX es opcional</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -494,8 +517,9 @@
 
 
 
-		<!-- 21 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>21</p>
 			<h2>ejemplo de un elemento en JSX</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -514,8 +538,9 @@
 
 
 
-		<!-- 22 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>22</p>
 			<h2>Elementos en JSX</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -534,8 +559,9 @@
 
 
 
-		<!-- 23 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>23</p>
 			<h2>¿Qué es React?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Elementos vs Componentes</li>
@@ -551,8 +577,9 @@
 
 
 
-		<!-- 24 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>24</p>
 			<h2>React DOM</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -570,8 +597,9 @@
 
 
 
-		<!-- 25 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>25</p>
 			<h2>Elementos (JSX)</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -589,8 +617,9 @@
 
 
 
-		<!-- 26 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>26</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Etiquetas</li>
@@ -606,8 +635,9 @@
 
 
 
-		<!-- 27 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>27</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Atributos</li>
@@ -627,8 +657,9 @@
 
 
 
-		<!-- 28 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>28</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Atributos del DOM reconocidos por React (https://reactjs.org/docs/dom-elements.html)</li>
@@ -645,8 +676,9 @@
 
 
 
-		<!-- 29 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>29</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Estructura (Componente JSX)</li>
@@ -661,8 +693,9 @@
 
 
 
-		<!-- 30 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>30</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Renderizar Componentes</li>
@@ -678,8 +711,9 @@
 
 
 
-		<!-- 31 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>31</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Self-Closing Tags (Etiquetas Autocerradas): ej: </li>
@@ -695,8 +729,9 @@
 
 
 
-		<!-- 32 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>32</p>
 			<h2>¿Cómo reconocer Elementos y diferenciarlos de los Componentes?</h2>
 			<ul>
 				<li class="col-md-8 fs-4">JavaScript en JSX (podemos incluir JS en JSX)</li>
@@ -710,14 +745,15 @@
 
 
 
-		<!-- 33 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>33</p>
 			<h2>Crear una Aplicación de React</h2>
 			<!-- <ul>
-		<li class="col-md-8 fs-4">HTML</li>
-		<li class="col-md-8 fs-4">CSS</li>
-		<li class="col-md-8 fs-4">JS</li>
-	</ul> -->
+				<li class="col-md-8 fs-4">HTML</li>
+				<li class="col-md-8 fs-4">CSS</li>
+				<li class="col-md-8 fs-4">JS</li>
+			</ul> -->
 			<div class="d-flex align-content-center gap-1">
 				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
 				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>00:57:02</time></span>
@@ -726,8 +762,9 @@
 
 
 
-		<!-- 34 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>34</p>
 			<h2>Visual Studio Code</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -745,8 +782,9 @@
 
 
 
-		<!-- 35 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>35</p>
 			<h2>Visual Studio Code</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Crear proyecto base de React</li>
@@ -762,8 +800,9 @@
 
 
 
-		<!-- 36 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>36</p>
 			<h2>Visual Studio Code</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Iniciar el proyecto para que lo veamos en el navegador</li>
@@ -778,8 +817,9 @@
 
 
 
-		<!-- 37 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>37</p>
 			<h2>Visual Studio Code</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Terminal info</li>
@@ -795,8 +835,9 @@
 
 
 
-		<!-- 38 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>38</p>
 			<h2>Estructura de la Aplicación</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -812,8 +853,9 @@
 
 
 
-		<!-- 39 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>39</p>
 			<h2>Estructura de la Aplicación</h2>
 			<ul>
 				<li class="col-md-8 fs-4">'npx create-react-app .' => crea la aplicación directamente en la carpeta donde nos encontramos</li>
@@ -828,8 +870,9 @@
 
 
 
-		<!-- 40 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>40</p>
 			<h2>Proyecto: Clon de freeCodeCamp</h2>
 			<!-- <ul>
 				<li class="col-md-8 fs-4">HTML</li>
@@ -845,8 +888,9 @@
 
 
 
-		<!-- 41 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>41</p>
 			<h2>Proyecto: Clon de freeCodeCamp</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Crear el Proyecto</li>
@@ -861,8 +905,9 @@
 
 
 
-		<!-- 42 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>42</p>
 			<h2>Proyecto: Clon de freeCodeCamp</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Identificar los componentes</li>
@@ -877,11 +922,21 @@
 
 
 
-		<!-- 43 -->
+
 		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>43</p>
 			<h2>Proyecto: Clon de freeCodeCamp</h2>
 			<ul>
 				<li class="col-md-8 fs-4">Crear un componente</li>
+
+				<li class="col-md-8 fs-4">
+					¿Qué son los módulos en Javascript? ¿Qué es CommonJS, AMD y ECMAScript 6?
+					<a href="https://programacionymas.com/blog/modulos-javascript-commonjs-amd-ecmascript" target="_blank">Enlace</a>
+				</li>
+				<li class="col-md-8 fs-4">
+					CommonJS en Dos Minutos
+					<a href="https://www.youtube.com/watch?v=97qak8k0HMU" target="_blank">Enlace</a>
+				</li>
 			</ul>
 			<div class="d-flex align-content-center gap-1">
 				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
@@ -889,22 +944,218 @@
 			</div>
 		</div>
 
-	</div>
 
 
-	<!-- 43 -->
-	<div class="h-100 p-5 bg-light border rounded-3" cartita>
-		<h2>Proyecto: Clon de freeCodeCamp</h2>
-		<ul>
-			<li class="col-md-8 fs-4">Crear un componente</li>
-		</ul>
-		<div class="d-flex align-content-center gap-1">
-			<button class="btn btn-primary btn-lg" type="button">Enlace</button>
-			<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>01:32:04</time></span>
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>44</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Preparar el Proyecto</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>01:42:29</time></span>
+			</div>
 		</div>
-	</div>
 
-	</div>
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>45</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Mostrar un Componente</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>01:50:18</time></span>
+			</div>
+		</div>
+
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>46</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Exportar un Componente</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;"><time>01:54:40</time></span>
+			</div>
+		</div>
+
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>47</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Herramientas de React</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time>01:58:28</time>
+				</span>
+			</div>
+		</div>
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>48</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Exportación Nombrada</li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time>01:59:18</time>
+				</span>
+			</div>
+		</div>
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>49</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4">Asignar Estilos con CSS</li>
+				<p>La principal diferencia entre las unidades de medida EM y REM es que la unidad EM se basa en el tamaño de fuente del elemento padre
+					<a href="https://www.emm-gfx.net/2019/12/unidades-css-em-y-rem-cuales-son-sus-diferencias/" target="_blank" rel="noopener noreferrer">
+						[1]
+					</a>
+					<a href="https://fjmduran.com/blog/rem-em-px/" target="_blank" rel="noopener noreferrer">
+						[2]
+					</a>
+					, mientras que la unidad REM se basa en el tamaño de fuente del elemento raíz (HTML). Esto significa que si el elemento padre cambia de tamaño
+					<a href="https://www.emm-gfx.net/2019/12/unidades-css-em-y-rem-cuales-son-sus-diferencias/" target="_blank" rel="noopener noreferrer">
+						[1]
+					</a>
+					<a href="https://lupitacode.medium.com/em-vs-rem-cu%C3%A1l-deber%C3%ADa-usar-938376e92da0" target="_blank" rel="noopener noreferrer">
+						[3]
+					</a>
+					, el elemento hijo cambiará su tamaño en función del tamaño del elemento padre, mientras que si el elemento raíz cambia de tamaño, el elemento hijo se mantendrá en el mismo tamaño. Además, la unidad REM se puede usar para escalar todos los elementos en la página, mientras que la unidad EM no puede escalar todos los elementos de la misma manera.
+				</p>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time>02:01:25</time>
+				</span>
+			</div>
+		</div>
+
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>50</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4"></li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time></time>
+				</span>
+			</div>
+		</div>
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>51</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4"></li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time></time>
+				</span>
+			</div>
+		</div>
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>52</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4"></li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time></time>
+				</span>
+			</div>
+		</div>
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>53</p>
+			<h2>Proyecto: Clon de freeCodeCamp</h2>
+			<ul>
+				<li class="col-md-8 fs-4"></li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time></time>
+				</span>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="h-100 p-5 bg-light border rounded-3" cartita>
+			<p>54</p>
+			<h2></h2>
+			<ul>
+				<li class="col-md-8 fs-4"></li>
+			</ul>
+			<div class="d-flex align-content-center gap-1">
+				<button class="btn btn-primary btn-lg" type="button">Enlace</button>
+				<span class="badge bg-danger text-warning" style="font-size: 1.5em;">
+					<time></time>
+				</span>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- fin: div Principal -->
+
 
 
 
@@ -937,42 +1188,43 @@
 		//Fuente: https://mdbootstrap.com/docs/standard/extended/back-to-top/
 
 
-		window.onload = function () {
+		//  = function () {
 
-			//Get the button
-			let mybutton = document.getElementById("btn-back-to-top");
+		// 	//Get the button
+		// 	let mybutton = document.getElementById("btn-back-to-top");
 
-			// dando estilo al botón
-			mybutton.style.position = 'fixed';
-			mybutton.style.bottom = '20px';
-			mybutton.style.right = '20px';
-			mybutton.style.display = 'none';
+		// 	// dando estilo al botón
+		// 	mybutton.style.position = 'fixed';
+		// 	mybutton.style.bottom = '20px';
+		// 	mybutton.style.right = '20px';
+		// 	mybutton.style.display = 'none';
+
+		// 	// When the user clicks on the button, scroll to the top of the document
+		// 	mybutton.addEventListener("click", backToTop);
+
+		// };
+
+		// // When the user scrolls down 20px from the top of the document, show the button
+		// window.onscroll = function () {
+		// 	scrollFunction();
+		// };
+
+		// function scrollFunction() {
+		// 	if (
+		// 		document.body.scrollTop > 20 ||
+		// 		document.documentElement.scrollTop > 20
+		// 	) {
+		// 		mybutton.style.display = "block";
+		// 	} else {
+		// 		mybutton.style.display = "none";
+		// 	}
+		// }
 
 
-		}
-
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function () {
-			scrollFunction();
-		};
-
-		function scrollFunction() {
-			if (
-				document.body.scrollTop > 20 ||
-				document.documentElement.scrollTop > 20
-			) {
-				mybutton.style.display = "block";
-			} else {
-				mybutton.style.display = "none";
-			}
-		}
-		// When the user clicks on the button, scroll to the top of the document
-		mybutton.addEventListener("click", backToTop);
-
-		function backToTop() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
+		// function backToTop() {
+		// 	document.body.scrollTop = 0;
+		// 	document.documentElement.scrollTop = 0;
+		// }
 	</script>
 
 
@@ -998,13 +1250,13 @@
 
 
 	<script>
-		window.onload = function () {
 
-			let principal = document.querySelector('#principal');
 
-			f_datosCartitaHTML();
+		let principal = document.querySelector('#principal');
 
-		};
+		// f_datosCartitaHTML();
+
+
 
 		/**
 		 * Inserta un elemento html {hijo} en el elemento {padre}, en el {lugar} indicado
@@ -1137,12 +1389,12 @@
 								for (let [clave2, valor2] of Object.entries(valor)) {
 
 									cadenaResultado += `<${clave}>`;
-									console.log(`%c <${clave}>`, `color: Aqua`);
+									// console.log(`%c <${clave}>`, `color: Aqua`);
 
 									f_recorreObjeto(valor2, clave2);
 
 									cadenaResultado += `</${clave}>`;
-									console.log(`%c </${clave}>`, `color: Aqua`);
+									// console.log(`%c </${clave}>`, `color: Aqua`);
 
 								}
 
@@ -1164,7 +1416,7 @@
 							cadenaResultado += `${valor}`;
 							cadenaResultado += `</${clave}>`;
 
-							console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
+							// console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
 
 							break;// fin case: 'string'
 
