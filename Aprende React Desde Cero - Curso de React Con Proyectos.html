@@ -940,6 +940,7 @@
 
 
 		const f_cadenaDatosHTML = function () {
+
 			let objetoDatos = {
 				h2: {
 					titulo: 'Estructura del curso',
@@ -980,7 +981,7 @@
 						}
 					}
 				]
-			};
+			}; // fin: objetoDatos{}
 
 			let cadenaResultado = '';
 			const etiquetas = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'code'];
@@ -997,56 +998,67 @@
 
 					// console.log(`%c ${clave} : %c${valor}`, `color: Aqua`, `color: DeepPink`);
 
-					// if (isNaN(clave)) { // si la clave no es númerica (debe ser porque es una etiqueta string)
 
-					if (isNaN(clave) && etiquetas.includes(clave)) { // para que no incluya etiquetas mal formadas: <titulo></titulo>
-						cadenaResultado += `<${clave}> `;
-						console.log(`%c <${clave}>`, `color: Aqua`);
-					} else {
+					switch (valor.constructor.name.toLowerCase()) { // comprueba el tipo del 'valor'
 
-						if (!isNaN(etiqueta)) {
-							cadenaResultado += `<${etiqueta}> `;
-							console.log(`%c <${etiqueta}>`, `color: Aqua`);
-						}
+						case 'array':
 
+							if (etiquetas.includes(clave)) { // para que no incluya etiquetas mal formadas: <titulo></titulo>
+
+								cadenaResultado += `<${clave}> `;
+								console.log(`%c <${clave}>`, `color: Aqua`);
+
+								console.log(`%c ${valor}`, `color: DeepPink`);
+								console.log(`%c ${valor.constructor.name}`, `color: Orange`);
+								f_recorreObjeto(valor, clave);
+
+								cadenaResultado += `</${clave}>`;
+								console.log(`%c </${clave}>`, `color: Aqua`);
+							} else {
+
+								f_recorreObjeto(valor, clave);
+							}
+
+							break;
+
+						case 'object':
+
+							if (etiquetas.includes(clave)) { // para que no incluya etiquetas mal formadas: <titulo></titulo>
+
+								cadenaResultado += `<${clave}> `;
+								console.log(`%c <${clave}>`, `color: Aqua`);
+
+								f_recorreObjeto(valor, clave);
+
+								cadenaResultado += `</${clave}>`;
+								console.log(`%c </${clave}>`, `color: Aqua`);
+							} else {
+								f_recorreObjeto(valor, clave);
+							}
+
+							break;
+
+						case 'string':
+
+							cadenaResultado += `${valor}`;
+							console.log(`%c ${valor}`, `color: DeepPink`);
+
+							break;
+
+
+						default:
+							console.log(`%c ${clave} : %c ${valor}`, `color: Aqua`, `color: DeepPink`);
+							break;
 					}
 
 
-					if ((typeof valor) != 'object') {
-
-						// console.log(`% c ${ clave }: % c ${ valor } `, `color: Aqua`, `color: DeepPink`);
-
-						cadenaResultado += `${valor}`;
-						console.log(`%c ${valor}`, `color: DeepPink`);
 
 
-					} else {
-
-						// console.log(`% c ${ clave }: % c ${ valor } `, `color: Aqua`, `color: DeepPink`);
-						// cadenaResultado += `< ${ clave }> `;
-						f_recorreObjeto(valor, clave);
-						// cadenaResultado += `</${ clave }> `;
-					}
-
-
-
-					if (isNaN(clave) && etiquetas.includes(clave)) {// para que no incluya etiquetas mal formadas: <titulo></titulo>
-						cadenaResultado += `</${clave}>`;
-						console.log(`%c </${clave}>`, `color: Aqua`);
-					} else {
-						if (isNaN(etiqueta)) {
-							cadenaResultado += `</${etiqueta}> `;
-							console.log(`%c </${etiqueta}>`, `color: Aqua`);
-						}
-
-					}
-
-					// } else { // si la clave es numérica (debe ser porque estamos en un array)
-					// cadenaResultado += `${valor} `;
-					// console.log(`%c${valor}`, `color: DeepPink`);
-					// }
 				}
-			};
+
+			}; // fin: f_recorreObjeto()
+
+
 
 			f_recorreObjeto(objetoDatos);
 
@@ -1054,9 +1066,10 @@
 			console.log(`%c ${cadenaResultado} `, `color: yellow`);
 			document.write(cadenaResultado);
 
-
 			return cadenaResultado;
-		}
+
+		}; // fin: f_cadenaDatosHTML()
+
 
 	</script>
 
