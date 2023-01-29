@@ -941,9 +941,10 @@
 
 		const f_cadenaDatosHTML = function () {
 
-			let objetoDatos = {
-				h2: {
-					titulo: 'Estructura del curso',
+			let arrayObjetoDatos = [
+
+				{// elemento 1
+					h2: 'Estructura del curso',
 					ul: {
 						li: [
 							'Conceptos básicos de React',
@@ -952,25 +953,28 @@
 							'Estructura básica de una aplicación de React'
 						]
 					}
-				},
-				h3: [
-					{
-						h3: 'Proyectos',
-						ul: {
-							li: [
-								'Proyecto 1: Clon de testimonios de freeCodeCamp.',
-								'Proyecto 2: Contador de clics.',
-								'Proyecto 3: Calculadora.',
-								'Proyecto 4: Aplicación de tareas'
-							]
-						}
-					},
-					{
-						h3: 'Estructura del curso',
-						ul: {
-							li: 'Componentes de clase',
-							li: {
-								titulo: 'Adaptar los primeros dos proyectos con componentes de clase:',
+				},// fin elemento 1
+
+				{// elemento 2
+					h3: 'Proyectos',
+					ul: {
+						li: [
+							'Proyecto 1: Clon de testimonios de freeCodeCamp.',
+							'Proyecto 2: Contador de clics.',
+							'Proyecto 3: Calculadora.',
+							'Proyecto 4: Aplicación de tareas'
+						]
+					}
+				},// fin elemento 2
+
+
+				{// elemento 3
+					h3: 'Estructura del curso',
+					ul: {
+						li: [
+							'Componentes de clase',
+							'Adaptar los primeros dos proyectos con componentes de clase:',
+							{
 								ul: {
 									li: [
 										'Clon de testimonios de freeCodeCamp.',
@@ -978,111 +982,131 @@
 									]
 								}
 							}
-						}
+						]
 					}
-				]
-			}; // fin: objetoDatos{}
+				}// fin elemento 3
+
+			]; // fin: arrayObjetoDatos{}
 
 			let cadenaResultado = '';
 			const etiquetas = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'code'];
 
-			const f_recorreObjeto = function (objetoDatos, etiqueta = '0') {
+			const f_recorreObjeto = function (arrayObjetoDatos, etiqueta = '') {
 
-				for (let [clave, valor] of Object.entries(objetoDatos)) {
-					// console.log(valor.constructor.name);
-					// console.log(typeof clave);
-					// console.log(`clave: `, clave);
-					// console.log(`valor: `, valor);
-					// console.log(`% c ${ cadenaResultado } => % c ${ (typeof valor) } `, `color: Aqua`, `color: DeepPink`);
+				// console.log(`${arrayObjetoDatos.constructor.name.toLowerCase()}`);
 
+				// if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
 
-					// console.log(`%c ${clave} : %c${valor}`, `color: Aqua`, `color: DeepPink`);
+				// 	f_recorreObjeto(valor, clave);
 
+				// } else {// si clave NO es NÚMERICA (array asociativo: <li>)
+				// }
 
-					switch (valor.constructor.name.toLowerCase()) { // comprueba el tipo del 'valor'
+				for (let [clave, valor] of Object.entries(arrayObjetoDatos)) {
+
+					console.log(`clave: ${clave} =>, valor: ${valor}`);
+					console.log();
+					switch (valor.constructor.name.toLowerCase()) {
 
 						case 'array':
-
-							if (etiquetas.includes(clave)) { // para que no incluya etiquetas mal formadas: <titulo></titulo>
-
-								cadenaResultado += `<${clave}> `;
-								console.log(`%c <${clave}>`, `color: Aqua`);
-
-
-								f_recorreObjeto(valor, clave);
-
-								cadenaResultado += `</${clave}>`;
-								console.log(`%c </${clave}>`, `color: Aqua`);
-
-							} else {
-
-								console.log(`%c ${valor}`, `color: DeepPink`);
-								console.log(`%c ${valor.constructor.name}`, `color: Orange`);
-								f_recorreObjeto(valor, clave);
-
-							}
-
-							break;
-
 						case 'object':
 
-							if (etiquetas.includes(clave)) { // para que no incluya etiquetas mal formadas: <titulo></titulo>
+							if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
 
-								cadenaResultado += `<${clave}> `;
+								f_recorreObjeto(valor, clave);
+
+							} else {// si clave NO es NÚMERICA (array asociativo: <li>)
+								cadenaResultado += `<${clave}>`;
 								console.log(`%c <${clave}>`, `color: Aqua`);
 
 								f_recorreObjeto(valor, clave);
 
 								cadenaResultado += `</${clave}>`;
 								console.log(`%c </${clave}>`, `color: Aqua`);
-
-							} else {
-
-								f_recorreObjeto(valor, clave);
 
 							}
 
 							break;
 
 						case 'string':
-
-							if (isNaN(clave)) { // si la clave NO ES un NÚMERO
-
-								cadenaResultado += `${valor}`;
-								console.log(`%c ${valor}`, `color: DeepPink`);
-
-							} else { // si la clave ES un NÚMERO
-
-								cadenaResultado += `<${etiqueta}> `;
-								console.log(`%c <${etiqueta}>`, `color: Aqua`);
-
-								cadenaResultado += `${valor}`;
-								console.log(`%c ${valor}`, `color: DeepPink`);
-
-								cadenaResultado += `</${etiqueta}>`;
-								console.log(`%c </${etiqueta}>`, `color: Aqua`);
-
-							}
-
+							cadenaResultado += `<${clave}>`;
+							cadenaResultado += `${valor}`;
+							cadenaResultado += `</${clave}>`;
+							console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
+							console.log();
 
 							break;
+
+						// case 'object':
+
+						// 	if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
+
+						// 		f_recorreObjeto(valor, clave);
+
+						// 	} else {// si clave NO es NÚMERICA (array asociativo: <li>)
+
+						// 		cadenaResultado += `<${clave}>`;
+						// 		console.log(`%c <${clave}>`, `color: Aqua`);
+
+						// 		f_recorreObjeto(valor);
+
+						// 		cadenaResultado += `</${clave}>`;
+						// 		console.log(`%c </${clave}>`, `color: Aqua`);
+
+						// 	}
+
+
+						// 	break;
+
 
 
 						default:
-							console.log(`%c ${clave} : %c ${valor}`, `color: Aqua`, `color: DeepPink`);
+
 							break;
+
 					}
 
-
-
-
 				}
+
+				// for (let [clave, valor] of Object.entries(arrayObjetoDatos)) {
+
+				// 	console.log(`%c ${clave} : %c ${valor}`, `color: Aqua`, `color: DeepPink`);
+
+				// 	switch (valor.constructor.name.toLowerCase()) { // comprueba el tipo del 'valor'
+
+				// 		case 'array':
+
+
+				// 			break;
+
+				// 		case 'object':
+				// 			f_recorreObjeto(valor);
+				// 			break;
+
+
+				// 		case 'string':
+
+				// 			// console.log(`%c ${clave} : %c ${valor}`, `color: Aqua`, `color: DeepPink`);
+
+
+				// 			break;
+
+
+				// 		default:
+
+				// 			break;
+				// 	}
+
+
+
+
+				// }
 
 			}; // fin: f_recorreObjeto()
 
 
 
-			f_recorreObjeto(objetoDatos);
+			f_recorreObjeto(arrayObjetoDatos);
 
 			console.log('\n\n');
 			console.log(`%c ${cadenaResultado} `, `color: yellow`);
