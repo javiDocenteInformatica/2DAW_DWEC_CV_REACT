@@ -1008,15 +1008,18 @@
 								cadenaResultado += `<${clave}> `;
 								console.log(`%c <${clave}>`, `color: Aqua`);
 
-								console.log(`%c ${valor}`, `color: DeepPink`);
-								console.log(`%c ${valor.constructor.name}`, `color: Orange`);
+
 								f_recorreObjeto(valor, clave);
 
 								cadenaResultado += `</${clave}>`;
 								console.log(`%c </${clave}>`, `color: Aqua`);
+
 							} else {
 
+								console.log(`%c ${valor}`, `color: DeepPink`);
+								console.log(`%c ${valor.constructor.name}`, `color: Orange`);
 								f_recorreObjeto(valor, clave);
+
 							}
 
 							break;
@@ -1032,16 +1035,35 @@
 
 								cadenaResultado += `</${clave}>`;
 								console.log(`%c </${clave}>`, `color: Aqua`);
+
 							} else {
+
 								f_recorreObjeto(valor, clave);
+
 							}
 
 							break;
 
 						case 'string':
 
-							cadenaResultado += `${valor}`;
-							console.log(`%c ${valor}`, `color: DeepPink`);
+							if (isNaN(clave)) { // si la clave NO ES un NÚMERO
+
+								cadenaResultado += `${valor}`;
+								console.log(`%c ${valor}`, `color: DeepPink`);
+
+							} else { // si la clave ES un NÚMERO
+
+								cadenaResultado += `<${etiqueta}> `;
+								console.log(`%c <${etiqueta}>`, `color: Aqua`);
+
+								cadenaResultado += `${valor}`;
+								console.log(`%c ${valor}`, `color: DeepPink`);
+
+								cadenaResultado += `</${etiqueta}>`;
+								console.log(`%c </${etiqueta}>`, `color: Aqua`);
+
+							}
+
 
 							break;
 
