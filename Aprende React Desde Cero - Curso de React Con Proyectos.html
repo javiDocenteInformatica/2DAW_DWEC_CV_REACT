@@ -1005,14 +1005,29 @@
 
 							if (etiquetas.includes(clave)) { // para que no incluya etiquetas mal formadas: <titulo></titulo>
 
-								cadenaResultado += `<${clave}> `;
-								console.log(`%c <${clave}>`, `color: Aqua`);
+								if (typeof valor.values().next().value == 'string') {
+
+									// console.log(`%c ${valor}`, `color: Orange`);
+									// console.log(valor.values().next().value);
+									f_recorreObjeto(valor, clave);
+
+								} else {
 
 
-								f_recorreObjeto(valor, clave);
+									cadenaResultado += `<${clave}> `;
+									console.log(`%c <${clave}>`, `color: Aqua`);
 
-								cadenaResultado += `</${clave}>`;
-								console.log(`%c </${clave}>`, `color: Aqua`);
+									// console.log(`%c ${valor}`, `color: Orange`);
+									// console.log(valor.values().next().value);
+									f_recorreObjeto(valor, clave);
+
+									cadenaResultado += `</${clave}>`;
+									console.log(`%c </${clave}>`, `color: Aqua`);
+
+
+								}
+
+
 
 							} else {
 
@@ -1031,14 +1046,17 @@
 								cadenaResultado += `<${clave}> `;
 								console.log(`%c <${clave}>`, `color: Aqua`);
 
-								f_recorreObjeto(valor, clave);
+								if (Object.values(valor).values().next().value == 'string') { // si no es una etiqueta válida (ej: <titulo>), comprobamos si el valor es una cadena
+									// si el valor es una cadena, debemos cerrar la etiqueta anterior
 
-								cadenaResultado += `</${clave}>`;
-								console.log(`%c </${clave}>`, `color: Aqua`);
+									cadenaResultado += `${valor}`;
+									console.log(`%c ${valor}`, `color: DeepPink`);
+									cadenaResultado += `</${clave}>`;
+									console.log(`%c </${clave}>`, `color: Aqua`);
 
-							} else {
-
-								f_recorreObjeto(valor, clave);
+								} else {
+									f_recorreObjeto(valor, clave);
+								}
 
 							}
 
@@ -1048,8 +1066,8 @@
 
 							if (isNaN(clave)) { // si la clave NO ES un NÚMERO
 
-								cadenaResultado += `${valor}`;
-								console.log(`%c ${valor}`, `color: DeepPink`);
+								// cadenaResultado += `${valor}`;
+								// console.log(`%c ${valor}`, `color: DeepPink`);
 
 							} else { // si la clave ES un NÚMERO
 
@@ -1084,8 +1102,8 @@
 
 			f_recorreObjeto(objetoDatos);
 
-			console.log('\n\n');
-			console.log(`%c ${cadenaResultado} `, `color: yellow`);
+			// console.log('\n\n');
+			// console.log(`%c ${cadenaResultado} `, `color: yellow`);
 			document.write(cadenaResultado);
 
 			return cadenaResultado;
