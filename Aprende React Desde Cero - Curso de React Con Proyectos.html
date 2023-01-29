@@ -991,7 +991,7 @@
 			let cadenaResultado = '';
 			const etiquetas = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'code'];
 
-			const f_recorreObjeto = function (arrayObjetoDatos, etiqueta = '') {
+			const f_recorreObjeto = function (arrayObjetoDatos, etiqueta = '0') {
 
 				// console.log(`${arrayObjetoDatos.constructor.name.toLowerCase()}`);
 
@@ -1004,8 +1004,14 @@
 
 				for (let [clave, valor] of Object.entries(arrayObjetoDatos)) {
 
-					console.log(`clave: ${clave} =>, valor: ${valor}`);
-					console.log();
+					// if (typeof clave == 'string' && valor.constructor.name.toLowerCase() == 'array') {
+					// 	etiqueta = clave;
+					// }
+
+					// console.log(`clave: ${clave} =>, valor: ${valor}`);
+					// console.log();
+
+
 					switch (valor.constructor.name.toLowerCase()) {
 
 						case 'array':
@@ -1026,7 +1032,7 @@
 
 							}
 
-							break;
+							break; //fin case: 'array' 'object'
 
 						case 'string':
 							cadenaResultado += `<${clave}>`;
@@ -1035,36 +1041,16 @@
 							console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
 							console.log();
 
-							break;
-
-						// case 'object':
-
-						// 	if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
-
-						// 		f_recorreObjeto(valor, clave);
-
-						// 	} else {// si clave NO es NÚMERICA (array asociativo: <li>)
-
-						// 		cadenaResultado += `<${clave}>`;
-						// 		console.log(`%c <${clave}>`, `color: Aqua`);
-
-						// 		f_recorreObjeto(valor);
-
-						// 		cadenaResultado += `</${clave}>`;
-						// 		console.log(`%c </${clave}>`, `color: Aqua`);
-
-						// 	}
-
-
-						// 	break;
+							break;// fin case: 'string'
 
 
 
 						default:
 
-							break;
+							break;// fin case: default
 
-					}
+					}// fin: switch
+
 
 				}
 
