@@ -1022,24 +1022,65 @@
 								f_recorreObjeto(valor, clave);
 
 							} else {// si clave NO es NÚMERICA (array asociativo: <li>)
-								cadenaResultado += `<${clave}>`;
-								console.log(`%c <${clave}>`, `color: Aqua`);
 
-								f_recorreObjeto(valor, clave);
+								for (let [clave2, valor2] of Object.entries(valor)) {
 
-								cadenaResultado += `</${clave}>`;
-								console.log(`%c </${clave}>`, `color: Aqua`);
+									cadenaResultado += `<${clave}>`;
+									console.log(`%c <${clave}>`, `color: Aqua`);
+
+									f_recorreObjeto(valor2, clave2);
+
+									cadenaResultado += `</${clave}>`;
+									console.log(`%c </${clave}>`, `color: Aqua`);
+
+								}
+
+								// cadenaResultado += `<${clave}>`;
+								// console.log(`%c <${clave}>`, `color: Aqua`);
+
+								// f_recorreObjeto(valor, clave);
+
+								// cadenaResultado += `</${clave}>`;
+								// console.log(`%c </${clave}>`, `color: Aqua`);
 
 							}
 
 							break; //fin case: 'array' 'object'
 
 						case 'string':
+
+							if (isNaN(etiqueta)) { // si etiqueta no es un número
+
+								clave = etiqueta;
+
+							} else { // si etiqueta es un número
+
+							}
+
 							cadenaResultado += `<${clave}>`;
 							cadenaResultado += `${valor}`;
 							cadenaResultado += `</${clave}>`;
+
 							console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
-							console.log();
+
+
+
+
+							// if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
+
+							// 	cadenaResultado += `${valor}`;
+							// 	console.log(`%c ${valor}`, `color: DeepPink`);
+
+							// } else {// si clave NO es NÚMERICA (array asociativo: <li>)
+
+							// 	cadenaResultado += `<${clave}>`;
+							// 	cadenaResultado += `${valor}`;
+							// 	cadenaResultado += `</${clave}>`;
+
+							// 	console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
+							// }
+
+							// console.log();
 
 							break;// fin case: 'string'
 
@@ -1047,46 +1088,20 @@
 
 						default:
 
+							// if (!isNaN(clave)) { // si clave ES NUMÉRICA (array indexado)
+
+							// console.log(`%c ${valor}`, `color: DeepPink`);
+							// } else {// si clave NO es NÚMERICA (array asociativo: <li>)
+
+							// console.log(`%c <${clave}> %c${valor} %c</${clave}>`, `color: Aqua`, `color: DeepPink`, `color: Aqua`);
+							// }
+
 							break;// fin case: default
 
 					}// fin: switch
 
 
-				}
-
-				// for (let [clave, valor] of Object.entries(arrayObjetoDatos)) {
-
-				// 	console.log(`%c ${clave} : %c ${valor}`, `color: Aqua`, `color: DeepPink`);
-
-				// 	switch (valor.constructor.name.toLowerCase()) { // comprueba el tipo del 'valor'
-
-				// 		case 'array':
-
-
-				// 			break;
-
-				// 		case 'object':
-				// 			f_recorreObjeto(valor);
-				// 			break;
-
-
-				// 		case 'string':
-
-				// 			// console.log(`%c ${clave} : %c ${valor}`, `color: Aqua`, `color: DeepPink`);
-
-
-				// 			break;
-
-
-				// 		default:
-
-				// 			break;
-				// 	}
-
-
-
-
-				// }
+				}// fin: for Object.entries()
 
 			}; // fin: f_recorreObjeto()
 
@@ -1096,7 +1111,7 @@
 
 			console.log('\n\n');
 			console.log(`%c ${cadenaResultado} `, `color: yellow`);
-			document.write(cadenaResultado);
+			document.write(`${cadenaResultado}`);
 
 			return cadenaResultado;
 
