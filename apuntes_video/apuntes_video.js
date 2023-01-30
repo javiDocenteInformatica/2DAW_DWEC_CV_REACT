@@ -1,10 +1,18 @@
+// Constantes y Variables GLOBALES
+const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
+
+
 // EVENTO LOAD: espera a que cargue todo el DOM
 window.onload = function () {
 
-  let listaJumbotron = document.querySelectorAll('[cartita]');
+  // Declaraciones dependientes del DOM
+  let listaDivCartita = document.querySelectorAll('[cartita]');
+
+
+
 
   // recorro todos los jumbotron (son como tarjetas)
-  listaJumbotron.forEach(
+  listaDivCartita.forEach(
 
     function (nodo, indice, array) {
 
@@ -28,7 +36,18 @@ window.onload = function () {
   );// fin: listaJumbotron.forEach
 
 
-  
+
+  // CONTADOR
+  // añadir conteo a las 'Cartitas'
+  let listaPContador = document.querySelectorAll('[cartita] p[contador]');
+  listaPContador.forEach(
+    function (p, indice, array) {
+      p.innerHTML = indice + 1;
+    }
+  );
+
+}
+
 /** 
   * Función que abre una pestaña nueva en Youtube, en la url concretada, con el tiempo en segundos estipulado por parámetro
   * @param {string} tiempoEn_ms - tiempo en segundos donde empezará el video
@@ -59,8 +78,5 @@ const f_convierteHoraMinutosSegundosEn_seg = function (cadenaTiempo) {
   return segundosTotales;
 };
 
-const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
 
 
-
-}
