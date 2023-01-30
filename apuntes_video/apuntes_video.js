@@ -43,6 +43,7 @@ window.onload = function () {
   listaPContador.forEach(
     function (p, indice, array) {
       p.innerHTML = indice + 1;
+      p.classList.add('badge', 'bg-warning', 'text-dark', 'fs-6');
     }
   );
 
