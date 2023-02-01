@@ -1,6 +1,10 @@
 *///////////*
 *`WEBGRAFÍA`*
 *///////////*
+
+*--------------------*
+*`JAVASCRIPT VANILLA`*
+*--------------------*
 `Selectores de atributo:` **https://developer.mozilla.org/es/docs/Web/CSS/Attribute_selector*
 
 `Document.querySelectorAll()`: *https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAl*
@@ -60,3 +64,29 @@
 `:` **
 
 `:` **
+
+
+*--------*
+*`JQUERY`*
+*--------*
+
+`jQuery API:` *https://api.jquery.com/*
+
+`jQuery Tutorial:` *https://www.w3schools.com/jquery/default.asp*
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+
+
+
+
+
+

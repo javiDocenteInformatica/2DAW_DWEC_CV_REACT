@@ -6,24 +6,24 @@ const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZL
 window.onload = function () {
 
   // Declaraciones dependientes del DOM
-  let listaDivCartita = document.querySelectorAll('[cartita]');
+  let listaDivCartita = $('[cartita]');
 
 
 
 
   // recorro todos los jumbotron (son como tarjetas)
-  listaDivCartita.forEach(
+  listaDivCartita.each(
 
-    function (nodo, indice, array) {
+    function (indice) {
 
       // evento click por cada jumbotron
-      nodo.addEventListener('click', function (evento) {
+      $(this).click(function (evento) {
 
         let elementoClickado = evento.target;
 
         if (elementoClickado.nodeName.toLowerCase() == 'button') {
 
-          let cadenaElementoTiempo = nodo.querySelector('time').innerText;
+          let cadenaElementoTiempo = $(this).$('time').text();
 
           let tiempoEn_ms = f_convierteHoraMinutosSegundosEn_seg(cadenaElementoTiempo);
 
@@ -39,11 +39,11 @@ window.onload = function () {
 
   // CONTADOR
   // añadir conteo a las 'Cartitas'
-  let listaPContador = document.querySelectorAll('[cartita] p[contador]');
-  listaPContador.forEach(
-    function (p, indice, array) {
-      p.innerHTML = indice + 1;
-      p.classList.add('badge', 'bg-warning', 'text-dark', 'fs-6');
+  let listaPContador = $('[cartita] p[contador]');
+  listaPContador.each(
+    function (indice) {
+      $(this).html(indice + 1);
+      $(this).addClass(['badge', 'bg-warning', 'text-dark', 'fs-6']);
     }
   );
 
