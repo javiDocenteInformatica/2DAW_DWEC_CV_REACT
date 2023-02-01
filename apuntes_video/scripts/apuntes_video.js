@@ -3,27 +3,24 @@ const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZL
 
 
 // EVENTO LOAD: espera a que cargue todo el DOM
-window.onload = function () {
+$(document).ready(function () {
 
   // Declaraciones dependientes del DOM
   let listaDivCartita = $('[cartita]');
 
-
-
-
   // recorro todos los jumbotron (son como tarjetas)
   listaDivCartita.each(
 
-    function (indice) {
+    function (indice) { // recorre cada Cartita
 
       // evento click por cada jumbotron
       $(this).click(function (evento) {
 
         let elementoClickado = evento.target;
 
-        if (elementoClickado.nodeName.toLowerCase() == 'button') {
+        if ($(elementoClickado).prop('nodeName').toLowerCase() == 'button') {
 
-          let cadenaElementoTiempo = $(this).$('time').text();
+          let cadenaElementoTiempo = $($(this) > 'time').text();
 
           let tiempoEn_ms = f_convierteHoraMinutosSegundosEn_seg(cadenaElementoTiempo);
 
@@ -31,7 +28,11 @@ window.onload = function () {
         }
       });// fin: nodo.addEventListener('click', function (evento)
 
+      // añade el BootStrap a cada carta
+      f_anyadeBootStrapCartita($(this));
+
     }// fin: function (nodo, indice, array)
+
 
   );// fin: listaJumbotron.forEach
 
@@ -47,7 +48,7 @@ window.onload = function () {
     }
   );
 
-}
+});
 
 /** 
   * Función que abre una pestaña nueva en Youtube, en la url concretada, con el tiempo en segundos estipulado por parámetro
@@ -79,5 +80,11 @@ const f_convierteHoraMinutosSegundosEn_seg = function (cadenaTiempo) {
   return segundosTotales;
 };
 
+
+const f_anyadeBootStrapCartita = function (divCartita) {
+
+
+
+};
 
 

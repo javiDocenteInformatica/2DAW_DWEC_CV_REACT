@@ -5,7 +5,7 @@ class LI {
 
   constructor(li) {
     this.li = li;
-    this.liText = li.innerHTML;
+    this.liText = li.html();
   }
 
 }
@@ -17,9 +17,11 @@ class UL {
 
   constructor(ul) {
     listaLI = [];
-    for (let li of ul) {
-      listaLI.push(new LI(li));
-    }
+    ul.each(
+      function (indice) {
+        listaLI.push(new LI($(this)));
+      }
+    );
 
   }
 
@@ -54,16 +56,14 @@ class Cartita {
 
     try {
       // h2
-      this.h2 = divCartita.querySelector('h2');
+      this.h2 = ;
 
-      // ul // REVISAR
-      this.listaUL = divCartita.querySelectorAll('ul');
+      // ul
+      this.listaUL = [];
       for (let ul of listaUL) {
         this.listaUL.push(new UL(ul));
       }
 
-      // h3
-      this.listaH3 = divCartita.querySelectorAll('h3');
 
       // CONTADOR
       this.numCarta = Cartita.contador;// asigno valor de contador (esto le asignará un número que nos ayudará a identificar el orden de la carta)
