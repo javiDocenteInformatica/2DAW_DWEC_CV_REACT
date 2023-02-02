@@ -74,6 +74,78 @@
 
 `jQuery Tutorial:` *https://www.w3schools.com/jquery/default.asp*
 
+`jQuery - Get and Set CSS Classes:` *https://www.w3schools.com/jquery/jquery_css_classes.asp*
+
+`.find(): Obtenga los descendientes de cada elemento en el conjunto actual de elementos coincidentes, filtrados por un selector, un objeto jQuery o un elemento.` *https://api.jquery.com/find/*
+
+`jQuery() Object:` *https://api.jquery.com/jquery/#jQuery-object*
+
+`.children():` *https://api.jquery.com/children/#children-selector*
+
+`.parent():` *https://api.jquery.com/parent/#parent-selector*
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
 `:` **
 
 `:` **
