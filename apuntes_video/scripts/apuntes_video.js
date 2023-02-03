@@ -1,5 +1,5 @@
 // IMPORTACIONES
-
+import * as scrollTopButton from 'scrollTopButton.js';
 
 // Constantes y Variables GLOBALES
 const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
@@ -45,6 +45,10 @@ $(document).ready(function () {
   f_contadorCartitas();
 
 
+
+
+  // botón flecha para subir al principio del todo
+  scrollTopButton.f_scrollTopButton();
 
 });
 
