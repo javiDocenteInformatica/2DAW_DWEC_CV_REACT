@@ -37,6 +37,38 @@
 
 
 
+*-------------*
+*`HTMLElement`*
+*-------------*
+`HTMLElement.offsetHeight:` *https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight*
+
+`Document.documentElement:` *https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement*
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+
+*--------*
+*`scroll`*
+*--------*
+`Window.scroll():` *https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll*
+
+`Element.scrollTop:` *https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop*
+
+`Element.scrollHeight:` *https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight*
+
+`:` **
+
+`:` **
+
+`:` **
+
+
 *--------*
 *`CLASES`*
 *--------*

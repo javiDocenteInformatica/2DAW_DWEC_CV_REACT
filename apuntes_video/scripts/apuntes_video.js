@@ -45,10 +45,13 @@ $(document).ready(function () {
   f_contadorCartitas();
 
 
-
+  // botón flecha para bajar al final del todo
+  f_scrollBottomButton();
 
   // botón flecha para subir al principio del todo
   f_scrollTopButton();
+
+
 
 });
 
@@ -119,7 +122,7 @@ const f_anyadeBootStrapCartita = function (divCartita) {
 
 
   //etiqueta code
-  $(divCartita).find('code').addClass('fs-5');
+  $(divCartita).find('xmp').addClass('fs-5 text-danger m-0 p-0');
 
   // div del botón
   let divButton = $(divCartita).find('button').parent();
