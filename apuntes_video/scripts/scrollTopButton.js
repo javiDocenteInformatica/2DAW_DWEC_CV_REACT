@@ -2,6 +2,8 @@
 
 
 function scrollFunction() {
+  //Get the button
+  let mybutton = document.getElementById("btn-back-to-top");
   if (
     document.body.scrollTop > 20 ||
     document.documentElement.scrollTop > 20
@@ -19,7 +21,7 @@ function backToTop() {
 }
 
 
-export const f_scrollTopButton = function () {
+const f_scrollTopButton = function () {
 
   //Get the button
   let mybutton = document.getElementById("btn-back-to-top");

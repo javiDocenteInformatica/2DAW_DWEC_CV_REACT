@@ -1,5 +1,5 @@
 // IMPORTACIONES
-import * as scrollTopButton from 'scrollTopButton.js';
+// import * as scrollTopButton from 'scrollTopButton.js';
 
 // Constantes y Variables GLOBALES
 const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
@@ -25,9 +25,9 @@ $(document).ready(function () {
 
           let cadenaElementoTiempo = $(this).find('time').text(); // selector de selector
 
-          let tiempoEn_ms = f_convierteHoraMinutosSegundosEn_seg(cadenaElementoTiempo);
+          let tiempoEn_seg = f_convierteHoraMinutosSegundosEn_seg(cadenaElementoTiempo);
 
-          f_abreYoutubeTiempo(tiempoEn_ms);
+          f_abreYoutubeTiempo(tiempoEn_seg);
         }
       });// fin: nodo.addEventListener('click', function (evento)
 
@@ -48,7 +48,7 @@ $(document).ready(function () {
 
 
   // botón flecha para subir al principio del todo
-  scrollTopButton.f_scrollTopButton();
+  f_scrollTopButton();
 
 });
 
