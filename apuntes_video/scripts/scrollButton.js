@@ -30,7 +30,7 @@ const f_scrollBottomButton = function () {
   buttonBottom.addEventListener("click", function () {
 
     document.documentElement.scrollTop = document.documentElement.scrollHeight - diferencia;
-    this.style.display = 'none';
+    // this.style.display = 'none';
 
   });
 }
