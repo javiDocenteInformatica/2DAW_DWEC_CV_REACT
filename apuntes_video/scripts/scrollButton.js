@@ -3,8 +3,8 @@
 //Fuente: https://mdbootstrap.com/docs/standard/extended/back-to-top/
 
 
-// 887px son los pixeles que hay que restarle a 'document.documentElement.scrollHeight' para que la propiedad 'document.documentElement.scrollTop' esté al final del documento y así el scroll estará abajo del todo.
-const diferencia = 887; // esto es un apaño
+// Esta constante nos va a permitir calcular la diferencia entre dos propiedades que nos permiten calcular cuando estamos al final del documento.
+const diferencia = document.documentElement.scrollHeight - document.documentElement.scrollTop;
 
 const f_scrollBottomButton = function () {
 
@@ -30,6 +30,7 @@ const f_scrollBottomButton = function () {
   buttonBottom.addEventListener("click", function () {
 
     document.documentElement.scrollTop = document.documentElement.scrollHeight - diferencia;
+    this.style.display = 'none';
 
   });
 }
