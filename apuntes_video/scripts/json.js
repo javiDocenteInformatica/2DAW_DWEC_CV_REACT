@@ -1,5 +1,5 @@
 
-const arrayCartitasSerializado = {};
+const objetoCartitasSerializado = {};
 
 
 const f_generalJSON = function () {
@@ -17,7 +17,7 @@ const f_generalJSON = function () {
       // JSON
       const cartitaSerializada = f_serializaHTML(this)
       //claves de propiedades computadas (JS) ['cartita' + indice]: https://www.benmvp.com/blog/learning-es6-enhanced-object-literals/
-      arrayCartitasSerializado[['cartita' + indice]] = cartitaSerializada;
+      objetoCartitasSerializado[['cartita' + indice]] = cartitaSerializada;
 
 
     }// fin: function (nodo, indice, array)
@@ -25,11 +25,9 @@ const f_generalJSON = function () {
 
   );// fin: listaCartitas.forEach
 
-  console.log(arrayCartitasSerializado);
-
 
   // Esta función me debe permitir guardar un objeto JS en un fichero .json
-  f_guardarObjetoEnFichero();
+  f_guardarObjetoEnFichero(objetoCartitasSerializado);
 
 
 
@@ -67,5 +65,8 @@ const f_serializaHTML = function (elementoHTML) {
  * @returns {void} no return
  */
 const f_guardarObjetoEnFichero = function (objetoJS) {
-
+  // pasamos el objeto JS a JSON
+  let objetoJSON = JSON.stringify(objetoJS);
+  // console.log(objetoJSON);
+  console.log(objetoJS);
 };
