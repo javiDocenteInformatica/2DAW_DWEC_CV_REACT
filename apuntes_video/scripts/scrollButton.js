@@ -59,7 +59,7 @@ const f_scrollTopButton = function () {
 
 // EVENTO SCROLL
 window.onscroll = function () {
-  depura();
+  // depura();
 
   //BOTTOM
   let buttonBottom = document.getElementById("btn-carry-to-buttom");

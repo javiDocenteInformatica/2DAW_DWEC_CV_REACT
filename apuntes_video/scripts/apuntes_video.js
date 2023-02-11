@@ -4,6 +4,7 @@
 // Constantes y Variables GLOBALES
 const urlYoutube = "https://youtu.be/6Jfk8ic3KVk?list=PLbaI3dQZLK5BtbhnPRflnjMZLmCFThOoI";
 
+const arrayCartitasSerializado = [];
 
 // EVENTO LOAD: espera a que cargue todo el DOM
 $(document).ready(function () {
@@ -11,12 +12,12 @@ $(document).ready(function () {
   // Declaraciones dependientes del DOM
   let listaDivCartita = $('[cartita]');
 
-  // recorro todos los jumbotron (son como tarjetas)
+  // recorro todos las 'cartitas' (son como tarjetas)
   listaDivCartita.each(
 
     function (indice) { // recorre cada Cartita
 
-      // evento click por cada jumbotron
+      // evento click por cada 'cartitas'
       $(this).click(function (evento) {
 
         let elementoClickado = evento.target;
@@ -29,16 +30,26 @@ $(document).ready(function () {
 
           f_abreYoutubeTiempo(tiempoEn_seg);
         }
+
       });// fin: nodo.addEventListener('click', function (evento)
 
       // AÑADE BOOTSTRAP
       // añade el BootStrap a cada carta
       f_anyadeBootStrapCartita($(this));
 
+      // JSON
+      const cartitaSerializada = serializaHTML(this)
+      //claves de propiedades computadas (JS) ['cartita' + indice]: https://www.benmvp.com/blog/learning-es6-enhanced-object-literals/
+      arrayCartitasSerializado.push({ ['cartita' + indice]: cartitaSerializada });
+
+
     }// fin: function (nodo, indice, array)
 
 
   );// fin: listaJumbotron.forEach
+
+  console.log(arrayCartitasSerializado);
+
 
 
   // CONTADOR Cartitas

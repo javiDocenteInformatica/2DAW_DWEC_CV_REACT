@@ -136,11 +136,15 @@
 
 `:` **
 
-`:` **
+*------*
+*`JSON`*
+*------*
 
-`:` **
+`How to convert selected HTML to Json?:` *https://stackoverflow.com/questions/34504050/how-to-convert-selected-html-to-json*
 
-`:` **
+`Element.outerHTML:` *https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML*
+
+`claves de propiedades computadas (JS) ['cartita' + indice]:` *https://www.benmvp.com/blog/learning-es6-enhanced-object-literals/*
 
 `:` **
 
