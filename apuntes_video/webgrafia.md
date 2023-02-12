@@ -189,14 +189,15 @@
 
 `JavaScript - Ejercicio 591: Leer el Contenido de un Archivo de Texto Plano con File API (John Ortiz Ordoñez):` *https://www.youtube.com/watch?v=exImefDlHLw*
 
+`Create and save a file with JavaScript:` *https://stackoverflow.com/questions/13405129/create-and-save-a-file-with-javascript*
+
 `Blob (MDN Mozilla):` *https://developer.mozilla.org/en-US/docs/Web/API/Blob*
 
 
-`:` **
+`JavaScript Fetch API:` *https://www.w3schools.com/js/js_api_fetch.asp*
 
-`:` **
 
-`:` **
+`create a text file using javascript:` *https://stackoverflow.com/questions/5403912/create-a-text-file-using-javascript*
 
 `:` **
 

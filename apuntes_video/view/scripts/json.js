@@ -72,17 +72,39 @@ const f_guardarObjetoEnFichero = function (objetoJS) {
   // console.log(objetoJSON);
   // console.log(objetoJS);
 
-  let fichero = new File(objetoJSON);
-  console.log(fichero);
+  let blob = new Blob([objetoJSON], { type: 'application/json' });
+  console.log(blob);
 
-
-
-
-
-
-
-
+  // download(objetoJSON, 'cartitas.json', 'application/json');
 
 
 
 };
+
+
+/**
+ * Function to download data to a file.
+ * https://stackoverflow.com/questions/13405129/create-and-save-a-file-with-javascript
+ * @param {string} data
+ * @param {string} filename
+ * @param {string} type
+ * @returns {void} no return
+ */
+// 
+function download(data, filename, type) {
+  var file = new Blob([data], { type: type });
+  if (window.navigator.msSaveOrOpenBlob) // IE10+
+    window.navigator.msSaveOrOpenBlob(file, filename);
+  else { // Others
+    var a = document.createElement("a"),
+      url = URL.createObjectURL(file);
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }, 0);
+  }
+}
