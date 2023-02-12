@@ -173,6 +173,8 @@
 
 `claves de propiedades computadas (JS) ['cartita' + indice]:` *https://www.benmvp.com/blog/learning-es6-enhanced-object-literals/*
 
+`JSON.stringify() (MDN Mozilla):` *https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify*
+
 `:` **
 
 `:` **
@@ -189,7 +191,6 @@
 
 `Blob (MDN Mozilla):` *https://developer.mozilla.org/en-US/docs/Web/API/Blob*
 
-`JSON.stringify() (MDN Mozilla):` *https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify*
 
 `:` **
 

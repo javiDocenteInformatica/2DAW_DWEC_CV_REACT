@@ -72,6 +72,8 @@ const f_guardarObjetoEnFichero = function (objetoJS) {
   // console.log(objetoJSON);
   // console.log(objetoJS);
 
+  let fichero = new File(objetoJSON);
+  console.log(fichero);
 
 
 
