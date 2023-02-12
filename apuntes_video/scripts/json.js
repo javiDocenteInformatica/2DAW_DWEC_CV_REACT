@@ -48,6 +48,7 @@ const f_serializaHTML = function (elementoHTML) {
   // console.log(elementoHTML.constructor.name);
 
   let cadenaHTML = elementoHTML.outerHTML;
+  // let cadenaHTML = elementoHTML.outerText;
 
   //claves de propiedades computadas (JS) ['cartita' + indice]: https://www.benmvp.com/blog/learning-es6-enhanced-object-literals/
   // let objetoHTML = { ['cartita' + indice]: cadenaHTML }; 
@@ -65,8 +66,21 @@ const f_serializaHTML = function (elementoHTML) {
  * @returns {void} no return
  */
 const f_guardarObjetoEnFichero = function (objetoJS) {
+
   // pasamos el objeto JS a JSON
   let objetoJSON = JSON.stringify(objetoJS);
   // console.log(objetoJSON);
-  console.log(objetoJS);
+  // console.log(objetoJS);
+
+
+
+
+
+
+
+
+
+
+
+
 };

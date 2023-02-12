@@ -35,6 +35,33 @@
 
 ` Object:` *https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object*
 
+`Web Workers API:` *https://developer.mozilla.org/es/docs/Web/API/Web_Workers_API*
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+
+*--------*
+*`OBJECT`*
+*--------*
+
+`claves de propiedades computadas (JS) ['cartita' + indice]:` *https://www.benmvp.com/blog/learning-es6-enhanced-object-literals/*
+
+`:` **
+
+`:` **
+
+`:` **
+
 
 
 *-------------*
@@ -154,11 +181,15 @@
 
 `:` **
 
-`:` **
+*----------*
+*`FICHEROS`*
+*----------*
 
-`:` **
+`JavaScript - Ejercicio 591: Leer el Contenido de un Archivo de Texto Plano con File API (John Ortiz Ordoñez):` *https://www.youtube.com/watch?v=exImefDlHLw*
 
-`:` **
+`Blob (MDN Mozilla):` *https://developer.mozilla.org/en-US/docs/Web/API/Blob*
+
+`JSON.stringify() (MDN Mozilla):` *https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify*
 
 `:` **
 
