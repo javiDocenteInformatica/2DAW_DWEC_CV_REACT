@@ -183,6 +183,7 @@
 
 `:` **
 
+
 *----------*
 *`FICHEROS`*
 *----------*
@@ -194,10 +195,45 @@
 `Blob (MDN Mozilla):` *https://developer.mozilla.org/en-US/docs/Web/API/Blob*
 
 
-`JavaScript Fetch API:` *https://www.w3schools.com/js/js_api_fetch.asp*
-
-
 `create a text file using javascript:` *https://stackoverflow.com/questions/5403912/create-a-text-file-using-javascript*
+
+
+
+
+*------*
+*`AJAX`*
+*------*
+
+`CORS (Cross-Origin Resource Sharing):` *https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/cross-origin-resource-sharing/*
+
+`Using the Fetch API (MDN Mozilla):` 
+*https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch*
+
+*https://lenguajejs.com/javascript/peticiones-http/fetch/*
+
+
+`:` **
+
+`:` **
+
+`:` **
+
+
+*--------------*
+*`PHP FICHEROS`*
+*--------------*
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
+
+`:` **
 
 `:` **
 

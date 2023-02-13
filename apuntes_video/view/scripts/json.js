@@ -30,10 +30,6 @@ const f_generalJSON = function () {
   f_guardarObjetoEnFichero(objetoCartitasSerializado);
 
 
-
-
-
-
 };
 
 
@@ -77,9 +73,52 @@ const f_guardarObjetoEnFichero = function (objetoJS) {
 
   // download(objetoJSON, 'cartitas.json', 'application/json');
 
+  peticionAJAX('controller/controladorFichero.php', 'POST', objetoJSON);
 
 
 };
+
+
+
+const peticionAJAX = async function (url = '', method = 'POST', datos = { default: 'vacío' }) {
+
+  let formData = new FormData();
+  formData.append('datos', datos);
+  // console.log(formData);
+
+  let request = {
+    method: method,
+    headers: {
+      // 'Content-Type': 'application/json'
+      // 'Content-Type': 'multipart/form-data'
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: formData
+  };
+
+  // console.log(request.body.constructor.name);
+
+  let response = await fetch(url, request);
+  // console.log(response);
+  if (response.ok == false) {
+    throw new Error("WARN", response.status);
+  }
+
+  let textResponse = await response.text();
+  console.log(textResponse);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**
@@ -90,7 +129,7 @@ const f_guardarObjetoEnFichero = function (objetoJS) {
  * @param {string} type
  * @returns {void} no return
  */
-// 
+/*
 function download(data, filename, type) {
   var file = new Blob([data], { type: type });
   if (window.navigator.msSaveOrOpenBlob) // IE10+
@@ -108,3 +147,4 @@ function download(data, filename, type) {
     }, 0);
   }
 }
+*/
