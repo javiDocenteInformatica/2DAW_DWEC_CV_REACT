@@ -2,8 +2,8 @@
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   
-print_r(array_keys($_POST));
-var_dump($_POST['']);
+// print_r(array_keys($_POST));
+// var_dump($_POST['']);
 
 // echo true;
   
